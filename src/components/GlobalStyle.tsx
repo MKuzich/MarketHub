@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -16,9 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: #212121;
+  font-family: 'Roboto, sans-serif';
+  color: #0b090a;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
