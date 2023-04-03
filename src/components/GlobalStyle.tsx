@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -51,5 +50,13 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+.swiper-button-prev {
+    color: #0b090a; 
+}
+
+.swiper-button-next {
+    color: #0b090a; 
 }
 `;
