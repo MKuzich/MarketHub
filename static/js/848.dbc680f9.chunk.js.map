@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/848.dbc680f9.chunk.js","mappings":"uIAMA,UAJ0B,WACxB,OAAO,uBACR,C","sources":["pages/Product/Product.tsx"],"sourcesContent":["import React from 'react';\n\nconst Product: React.FC = () => {\n  return <></>;\n};\n\nexport default Product;\n"],"names":[],"sourceRoot":""}

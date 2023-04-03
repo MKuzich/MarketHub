@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/293.530c17ac.chunk.js","mappings":"uIAMA,UAJuB,WACrB,OAAO,uBACR,C","sources":["pages/Home.tsx"],"sourcesContent":["import React from 'react';\n\nconst Home: React.FC = () => {\n  return <></>;\n};\n\nexport default Home;\n"],"names":[],"sourceRoot":""}
