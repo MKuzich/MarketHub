@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import {
   Stack,
   FormControl,
@@ -9,6 +9,8 @@ import {
   InputAdornment,
   Button,
   Container,
+  Typography,
+  TextField,
 } from '@mui/material';
 import { GoSearch } from 'react-icons/go';
 import { TbShoppingCart } from 'react-icons/tb';
@@ -17,6 +19,8 @@ import { VscAccount } from 'react-icons/vsc';
 import { Logo } from '../Logo/Logo';
 import { categories } from '../../data/categories';
 import { StyledLink } from './SharedLayout.styled';
+
+import { links, socials, payment, legal } from '../../data/footerdata';
 
 const SharedLayout: React.FC = () => {
   return (
@@ -43,12 +47,7 @@ const SharedLayout: React.FC = () => {
                 type="text"
                 endAdornment={
                   <InputAdornment position="end">
-                    <IconButton
-                      aria-label="search"
-                      // onClick={handleClickShowPassword}
-                      // onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
+                    <IconButton aria-label="search" edge="end">
                       <GoSearch />
                     </IconButton>
                   </InputAdornment>
@@ -71,6 +70,75 @@ const SharedLayout: React.FC = () => {
           <Outlet />
         </Suspense>
       </main>
+      <footer>
+        <Container>
+          {' '}
+          <Stack>
+            <Stack direction="row">
+              <Stack>
+                {links.map(({ name, path }) => (
+                  <Typography
+                    key={'footer-link' + name}
+                    component={Link}
+                    to={path}
+                  >
+                    {name}
+                  </Typography>
+                ))}
+              </Stack>
+              <Stack>
+                {socials.map(({ name, path }) => (
+                  <Typography
+                    key={'footer-social' + name}
+                    component={Link}
+                    to={path}
+                  >
+                    {name}
+                  </Typography>
+                ))}
+              </Stack>
+              <Stack>
+                {payment.map(({ name, path }) => (
+                  <Typography
+                    key={'footer-payment' + name}
+                    component={Link}
+                    to={path}
+                  >
+                    {name}
+                  </Typography>
+                ))}
+              </Stack>
+              <Stack>
+                <form>
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Email"
+                    multiline
+                    maxRows={4}
+                    name="email"
+                    type="email"
+                  />
+                  <Button type="submit">Subscribe</Button>
+                </form>
+              </Stack>
+            </Stack>
+            <Stack direction="row">
+              <Typography>© 2023 MarketHub. All Rights Reserved</Typography>
+              <Stack direction="row">
+                {legal.map(({ name, path }) => (
+                  <Typography
+                    key={'footer-legal' + name}
+                    component={Link}
+                    to={path}
+                  >
+                    {name}
+                  </Typography>
+                ))}
+              </Stack>
+            </Stack>
+          </Stack>
+        </Container>
+      </footer>
     </>
   );
 };
