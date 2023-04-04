@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/markethub/static/css/main.b0e5060d.css",
-    "main.js": "/markethub/static/js/main.5367b34d.js",
-    "static/js/969.50016170.chunk.js": "/markethub/static/js/969.50016170.chunk.js",
-    "static/js/454.1576af72.chunk.js": "/markethub/static/js/454.1576af72.chunk.js",
+    "main.js": "/markethub/static/js/main.d515c568.js",
+    "static/js/799.2fed86d1.chunk.js": "/markethub/static/js/799.2fed86d1.chunk.js",
+    "static/js/454.e66b1b27.chunk.js": "/markethub/static/js/454.e66b1b27.chunk.js",
     "static/js/815.07f45c61.chunk.js": "/markethub/static/js/815.07f45c61.chunk.js",
     "static/js/848.dbc680f9.chunk.js": "/markethub/static/js/848.dbc680f9.chunk.js",
-    "static/js/356.06261445.chunk.js": "/markethub/static/js/356.06261445.chunk.js",
-    "static/js/435.8663196a.chunk.js": "/markethub/static/js/435.8663196a.chunk.js",
-    "static/js/105.b51f95ad.chunk.js": "/markethub/static/js/105.b51f95ad.chunk.js",
+    "static/js/475.3934e2eb.chunk.js": "/markethub/static/js/475.3934e2eb.chunk.js",
+    "static/js/731.51e3fa00.chunk.js": "/markethub/static/js/731.51e3fa00.chunk.js",
+    "static/js/566.7c6bef2b.chunk.js": "/markethub/static/js/566.7c6bef2b.chunk.js",
     "static/media/owner.png": "/markethub/static/media/owner.be4ca0773babe7feb387.png",
     "static/media/temp-1.jpg": "/markethub/static/media/temp-1.ab18edbe27c757ea6e55.jpg",
     "static/media/temp-2.jpg": "/markethub/static/media/temp-2.28a622fbede9a382df2c.jpg",
@@ -19,17 +19,17 @@
     "index.html": "/markethub/index.html",
     "static/media/markethub-logo.svg": "/markethub/static/media/markethub-logo.d0f320aad0887a1fdfa46619c71bfa22.svg",
     "main.b0e5060d.css.map": "/markethub/static/css/main.b0e5060d.css.map",
-    "main.5367b34d.js.map": "/markethub/static/js/main.5367b34d.js.map",
-    "969.50016170.chunk.js.map": "/markethub/static/js/969.50016170.chunk.js.map",
-    "454.1576af72.chunk.js.map": "/markethub/static/js/454.1576af72.chunk.js.map",
+    "main.d515c568.js.map": "/markethub/static/js/main.d515c568.js.map",
+    "799.2fed86d1.chunk.js.map": "/markethub/static/js/799.2fed86d1.chunk.js.map",
+    "454.e66b1b27.chunk.js.map": "/markethub/static/js/454.e66b1b27.chunk.js.map",
     "815.07f45c61.chunk.js.map": "/markethub/static/js/815.07f45c61.chunk.js.map",
     "848.dbc680f9.chunk.js.map": "/markethub/static/js/848.dbc680f9.chunk.js.map",
-    "356.06261445.chunk.js.map": "/markethub/static/js/356.06261445.chunk.js.map",
-    "435.8663196a.chunk.js.map": "/markethub/static/js/435.8663196a.chunk.js.map",
-    "105.b51f95ad.chunk.js.map": "/markethub/static/js/105.b51f95ad.chunk.js.map"
+    "475.3934e2eb.chunk.js.map": "/markethub/static/js/475.3934e2eb.chunk.js.map",
+    "731.51e3fa00.chunk.js.map": "/markethub/static/js/731.51e3fa00.chunk.js.map",
+    "566.7c6bef2b.chunk.js.map": "/markethub/static/js/566.7c6bef2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0e5060d.css",
-    "static/js/main.5367b34d.js"
+    "static/js/main.d515c568.js"
   ]
 }
