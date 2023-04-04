@@ -52,6 +52,8 @@ export const products = images.map((image, idx) => {
       rate: 4.8,
     },
     active: idx % 5 === 0 ? false : true,
-    rate: Math.random() * 50,
+    rate: Math.round(Math.random() * 50) * 0.1,
+    ordersPerDay: Math.round(Math.random() * 20),
+    totalOrders: 20 + Math.round(Math.random() * 200),
   };
 });

@@ -48,6 +48,12 @@ export const theme = createTheme({
       fontSize: '32px',
       fontWeight: 700,
     },
+    h3: {
+      fontFamily: 'Roboto',
+      color: '#0b090a',
+      fontSize: '24px',
+      fontWeight: 500,
+    },
     logo: {
       fontFamily: 'Roboto',
       fontSize: '24px',

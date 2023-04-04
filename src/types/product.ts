@@ -11,4 +11,6 @@ export interface IProduct {
   owner: IUser;
   active: boolean;
   rate: number;
+  ordersPerDay: number;
+  totalOrders: number;
 }
