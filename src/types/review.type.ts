@@ -1,10 +1,8 @@
-import { IUser } from './user';
-
 export interface IReview {
-  id: string;
+  _id: string;
   date: Date;
-  owner: IUser;
-  productId: string;
+  owner: string;
+  product: string;
   title: string;
   text: string;
   rate: number;

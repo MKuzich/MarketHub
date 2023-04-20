@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Stack, Box, Typography } from '@mui/material';
 
-import { IProduct } from '../../types/product';
+import { IProduct } from '../../types/product.type';
 
 import { selectedCurrency } from '../../data/currency';
 

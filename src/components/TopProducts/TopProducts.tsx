@@ -5,7 +5,7 @@ import { Navigation } from 'swiper';
 
 import { TopCard } from '../TopCard/TopCard';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
-import { IProduct } from '../../types/product';
+import { IProduct } from '../../types/product.type';
 
 type IProps = {
   title: string;

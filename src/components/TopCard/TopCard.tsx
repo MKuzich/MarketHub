@@ -3,7 +3,7 @@ import { Stack, Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import { selectedCurrency } from '../../data/currency';
-import { IProduct } from '../../types/product';
+import { IProduct } from '../../types/product.type';
 
 type IProps = {
   product: IProduct;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
 
-import { IReview } from '../../types/review';
+import { IReview } from '../../types/review.type';
 
 type IProps = {
   review: IReview;

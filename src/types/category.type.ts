@@ -1,7 +1,8 @@
 export interface ICategory {
-  id: string;
+  _id: string;
   name: string;
+  tag: string;
   desription: string;
-  path: string;
   image: string;
+  products: string[];
 }
