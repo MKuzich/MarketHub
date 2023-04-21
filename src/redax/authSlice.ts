@@ -13,15 +13,12 @@ const slice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setCredentials(state, action: PayloadAction<AuthState>) {
-      state.accessToken = action.payload.accessToken;
-    },
-    clearCredentials(state) {
-      state.accessToken = null;
+    setAccessToken(state, action: PayloadAction<string | null>) {
+      state.accessToken = action.payload;
     },
   },
 });
 
-export const { setCredentials, clearCredentials } = slice.actions;
+export const { setAccessToken } = slice.actions;
 
 export default slice.reducer;
