@@ -54,3 +54,11 @@ export interface IUserChangePassword {
   newPassword: string;
   oldPassword: string;
 }
+
+export interface IUserChangeData {
+  phone: string;
+  email: string;
+  firstName: string;
+  secondName: string;
+  image: string | null;
+}

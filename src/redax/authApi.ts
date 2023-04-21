@@ -1,6 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import {
-  IUser,
   IUserCreate,
   IUserLogIn,
   IAuthResponse,
@@ -16,10 +15,6 @@ export const authApi = createApi({
   baseQuery: baseQuery('http://localhost:8080/api/auth'),
   tagTypes: ['Auth'],
   endpoints: builder => ({
-    getCurrent: builder.query<IUser, void>({
-      query: () => '/current',
-      providesTags: ['Auth'],
-    }),
     signUp: builder.mutation<boolean, IUserCreate>({
       query: value => ({
         url: '/signup',
@@ -92,7 +87,6 @@ export const authApi = createApi({
 });
 
 export const {
-  useGetCurrentQuery,
   useSignUpMutation,
   useLogInMutation,
   useLogOutQuery,

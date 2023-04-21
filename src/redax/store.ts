@@ -5,6 +5,8 @@ import { authApi } from './authApi';
 import { categoryApi } from './categoryApi';
 import { orderApi } from './orderApi';
 import { productApi } from './productApi';
+import { reviewApi } from './reviewApi';
+import { userApi } from './userApi';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +15,8 @@ export const store = configureStore({
     [categoryApi.reducerPath]: categoryApi.reducer,
     [orderApi.reducerPath]: orderApi.reducer,
     [productApi.reducerPath]: productApi.reducer,
+    [reviewApi.reducerPath]: reviewApi.reducer,
+    [userApi.reducerPath]: userApi.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware(),
@@ -20,6 +24,8 @@ export const store = configureStore({
     categoryApi.middleware,
     orderApi.middleware,
     productApi.middleware,
+    reviewApi.middleware,
+    userApi.middleware,
   ],
 });
 
