@@ -21,3 +21,24 @@ export interface IProduct {
   orders: IProductsInOrder[];
   quantity: number;
 }
+
+export interface IProductCreate {
+  name: string;
+  category: string;
+  images?: string[];
+  price: number;
+  promoPrice?: number;
+  description: string;
+  quantity: number;
+}
+
+export interface IProductChangeData {
+  name?: string;
+  category?: string;
+  images?: string[];
+  price?: number;
+  promoPrice?: number;
+  description?: string;
+  active?: boolean;
+  quantity?: number;
+}

@@ -36,11 +36,11 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['Auth'],
     }),
-    logOut: builder.query({
+    logOut: builder.query<boolean, void>({
       query: () => '/logout',
       providesTags: ['Auth'],
     }),
-    verifyToken: builder.query({
+    verifyToken: builder.query<boolean, string>({
       query: verificationToken => `/verify/${verificationToken}`,
       providesTags: ['Auth'],
     }),
@@ -84,7 +84,7 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['Auth'],
     }),
-    resetEmail: builder.query({
+    resetEmail: builder.query<boolean, void>({
       query: emailChangeToken => `/reset-email/${emailChangeToken}`,
       providesTags: ['Auth'],
     }),
