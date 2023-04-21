@@ -1,5 +1,13 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { IUserCreate, IUserLogIn, IAuthResponse } from '../types/user.type';
+import {
+  IUser,
+  IUserCreate,
+  IUserLogIn,
+  IAuthResponse,
+  IUserEmail,
+  IUserResetPassword,
+  IUserChangePassword,
+} from '../types/user.type';
 
 import { baseQuery } from './baseQuery';
 
@@ -8,6 +16,10 @@ export const authApi = createApi({
   baseQuery: baseQuery('http://localhost:8080/api/auth'),
   tagTypes: ['Auth'],
   endpoints: builder => ({
+    getCurrent: builder.query<IUser, void>({
+      query: () => '/current',
+      providesTags: ['Auth'],
+    }),
     signUp: builder.mutation<boolean, IUserCreate>({
       query: value => ({
         url: '/signup',
@@ -24,7 +36,71 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['Auth'],
     }),
+    logOut: builder.query({
+      query: () => '/logout',
+      providesTags: ['Auth'],
+    }),
+    verifyToken: builder.query({
+      query: verificationToken => `/verify/${verificationToken}`,
+      providesTags: ['Auth'],
+    }),
+    verify: builder.mutation<boolean, IUserEmail>({
+      query: value => ({
+        url: '/verify',
+        method: 'PATCH',
+        body: value,
+      }),
+      invalidatesTags: ['Auth'],
+    }),
+    forgotPassword: builder.mutation<boolean, IUserEmail>({
+      query: value => ({
+        url: '/forgot-password',
+        method: 'PATCH',
+        body: value,
+      }),
+      invalidatesTags: ['Auth'],
+    }),
+    resetPassword: builder.mutation<boolean, IUserResetPassword>({
+      query: ({ resetToken, passwordId, newPassword }) => ({
+        url: `/reset-password/${resetToken}/${passwordId}`,
+        method: 'POST',
+        body: { newPassword },
+      }),
+      invalidatesTags: ['Auth'],
+    }),
+    changePassword: builder.mutation<boolean, IUserChangePassword>({
+      query: value => ({
+        url: '/change-password',
+        method: 'PATCH',
+        body: value,
+      }),
+      invalidatesTags: ['Auth'],
+    }),
+    changeEmail: builder.mutation<boolean, IUserEmail>({
+      query: value => ({
+        url: '/change-email',
+        method: 'PATCH',
+        body: value,
+      }),
+      invalidatesTags: ['Auth'],
+    }),
+    resetEmail: builder.query({
+      query: emailChangeToken => `/reset-email/${emailChangeToken}`,
+      providesTags: ['Auth'],
+    }),
   }),
 });
 
-export const { useSignUpMutation, useLogInMutation } = authApi;
+export const {
+  useGetCurrentQuery,
+  useSignUpMutation,
+  useLogInMutation,
+  useLogOutQuery,
+  useVerifyTokenQuery,
+  useVerifyMutation,
+  useForgotPasswordMutation,
+  useResetPasswordMutation,
+  useChangePasswordMutation,
+  useChangeEmailMutation,
+  useResetEmailQuery,
+} = authApi;

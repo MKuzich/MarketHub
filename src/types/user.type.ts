@@ -39,3 +39,18 @@ export interface IAuthResponse {
   accessToken: string;
   refreshToken: string;
 }
+
+export interface IUserEmail {
+  email: string;
+}
+
+export interface IUserResetPassword {
+  resetToken: string;
+  passwordId: string;
+  newPassword: string;
+}
+
+export interface IUserChangePassword {
+  newPassword: string;
+  oldPassword: string;
+}

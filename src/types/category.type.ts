@@ -6,3 +6,10 @@ export interface ICategory {
   image: string;
   products: string[];
 }
+
+export interface ICategoryCreate {
+  name: string;
+  tag: string;
+  desription: string;
+  image: string;
+}
