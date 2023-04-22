@@ -6,9 +6,10 @@ import { Navigation, Autoplay } from 'swiper';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 
-import { reviews } from '../../data/reviews';
+import { useGetAllReviewsQuery } from '../../redax/reviewApi';
 
 export const CustomersReviews: React.FC = () => {
+  const { data, isSuccess } = useGetAllReviewsQuery();
   return (
     <section>
       <Container>
@@ -25,11 +26,12 @@ export const CustomersReviews: React.FC = () => {
           modules={[Navigation, Autoplay]}
           className="mySwiper"
         >
-          {reviews.map(review => (
-            <SwiperSlide key={review.id}>
-              <ReviewCard review={review} />
-            </SwiperSlide>
-          ))}
+          {isSuccess &&
+            data.map(review => (
+              <SwiperSlide key={review._id}>
+                <ReviewCard review={review} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Container>
     </section>

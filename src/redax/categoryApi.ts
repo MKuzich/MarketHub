@@ -7,11 +7,11 @@ export const categoryApi = createApi({
   baseQuery: baseQuery('http://localhost:8080/api/categories'),
   tagTypes: ['Category'],
   endpoints: builder => ({
-    getAllCategories: builder.query<ICategory, void>({
+    getAllCategories: builder.query<ICategory[], void>({
       query: () => `/`,
       providesTags: ['Category'],
     }),
-    getCategory: builder.query<ICategory[], string>({
+    getCategory: builder.query<ICategory, string>({
       query: categoryId => `/${categoryId}`,
       providesTags: ['Category'],
     }),

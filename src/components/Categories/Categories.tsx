@@ -4,38 +4,40 @@ import { Container, Stack, Box, Typography } from '@mui/material';
 
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 
-import { categories } from '../../data/categories';
+import { useGetAllCategoriesQuery } from '../../redax/categoryApi';
 
 export const Categories: React.FC = () => {
+  const { data, isSuccess } = useGetAllCategoriesQuery();
   return (
     <section>
       <Container>
         <SectionTitle title="Shop by category" />
         <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={3}>
-          {categories.map(({ id, name, image, path, desription }) => (
-            <Stack
-              key={'section-cat' + id}
-              component={Link}
-              to={path}
-              sx={{
-                width: '17%',
-              }}
-            >
-              <Box
+          {isSuccess &&
+            data.map(({ _id, name, image, tag, desription }) => (
+              <Stack
+                key={'section-cat' + _id}
+                component={Link}
+                to={tag}
                 sx={{
-                  height: '150px',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  width: '17%',
                 }}
               >
-                <img src={image} alt={name} />
-              </Box>
-              <Typography variant="h3">{name}</Typography>
-              <Typography>{desription}</Typography>
-            </Stack>
-          ))}
+                <Box
+                  sx={{
+                    height: '150px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <img src={image} alt={name} />
+                </Box>
+                <Typography variant="h3">{name}</Typography>
+                <Typography>{desription}</Typography>
+              </Stack>
+            ))}
         </Stack>
       </Container>
     </section>

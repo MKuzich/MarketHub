@@ -11,10 +11,10 @@ type IProps = {
 };
 
 export const TopDeal: React.FC<IProps> = ({
-  product: { id, name, category, image, price, promoPrice },
+  product: { _id, name, category, images, price, promoPrice },
 }) => {
   return (
-    <Stack component={Link} to={`products/${id}`}>
+    <Stack component={Link} to={`products/${_id}`}>
       <Box
         sx={{
           overflow: 'hidden',
@@ -23,7 +23,7 @@ export const TopDeal: React.FC<IProps> = ({
           justifyContent: 'center',
         }}
       >
-        <img src={image} alt={name} />
+        <img src={images[1]} alt={name} />
       </Box>
       <Stack direction="row" justifyContent="space-between">
         <Stack>
