@@ -31,7 +31,7 @@ export const TopProducts: React.FC<IProps> = ({
           className="mySwiper"
         >
           {products.map(product => (
-            <SwiperSlide key={product.id}>
+            <SwiperSlide key={product._id}>
               <TopCard product={product} />
             </SwiperSlide>
           ))}

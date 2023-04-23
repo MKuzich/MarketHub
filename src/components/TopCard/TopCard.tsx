@@ -2,6 +2,7 @@ import React from 'react';
 import { Stack, Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+import questionImg from '../../images/question.jpg';
 import { selectedCurrency } from '../../data/currency';
 import { IProduct } from '../../types/product.type';
 
@@ -10,10 +11,10 @@ type IProps = {
 };
 
 export const TopCard: React.FC<IProps> = ({
-  product: { id, name, category, image, price, promoPrice },
+  product: { _id, name, category, images, price, promoPrice },
 }) => {
   return (
-    <Stack component={Link} to={`products/${id}`}>
+    <Stack component={Link} to={`products/${_id}`}>
       <Box
         sx={{
           height: '300px',
@@ -23,7 +24,11 @@ export const TopCard: React.FC<IProps> = ({
           justifyContent: 'center',
         }}
       >
-        <img src={image} alt={name} />
+        <img
+          src={images && images[0]}
+          onError={e => ((e.target as HTMLImageElement).src = questionImg)}
+          alt={name}
+        />
       </Box>
       <Stack direction="row" justifyContent="space-between">
         <Stack>

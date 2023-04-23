@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Stack, Box, Typography } from '@mui/material';
 
 import { IProduct } from '../../types/product.type';
-
+import questionImg from '../../images/question.jpg';
 import { selectedCurrency } from '../../data/currency';
 
 type IProps = {
@@ -23,7 +23,11 @@ export const TopDeal: React.FC<IProps> = ({
           justifyContent: 'center',
         }}
       >
-        <img src={images[1]} alt={name} />
+        <img
+          src={images && images[0]}
+          onError={e => ((e.target as HTMLImageElement).src = questionImg)}
+          alt={name}
+        />
       </Box>
       <Stack direction="row" justifyContent="space-between">
         <Stack>

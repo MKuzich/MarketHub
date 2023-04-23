@@ -6,17 +6,26 @@ import { Categories } from '../../components/Categories/Categories';
 import { TopDeals } from '../../components/TopDeals/TopDeals';
 import { CustomersReviews } from '../../components/CustomersReviews/CustomersReviews';
 
-import { products } from '../../data/products';
+import { useGetAllProductsQuery } from '../../redax/productApi';
 
 const Home: React.FC = () => {
+  const { data, isSuccess } = useGetAllProductsQuery();
   return (
     <>
       <Hero />
-      <TopProducts title="Top products" products={products} cardsPerView={3} />
-      <TopProducts title="New arrivals" products={products} cardsPerView={7} />
+      <TopProducts
+        title="Top products"
+        products={isSuccess ? data : []}
+        cardsPerView={3}
+      />
+      <TopProducts
+        title="New arrivals"
+        products={isSuccess ? data : []}
+        cardsPerView={7}
+      />
       <TopProducts
         title="Trending products"
-        products={products}
+        products={isSuccess ? data : []}
         cardsPerView={5}
       />
       <Categories />
