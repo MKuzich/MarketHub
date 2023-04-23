@@ -12,7 +12,7 @@ import { baseQuery } from './baseQuery';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: baseQuery('http://localhost:8080/api/auth'),
+  baseQuery: baseQuery('/auth'),
   tagTypes: ['Auth'],
   endpoints: builder => ({
     signUp: builder.mutation<boolean, IUserCreate>({

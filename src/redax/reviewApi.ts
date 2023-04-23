@@ -4,7 +4,7 @@ import { baseQuery } from './baseQuery';
 
 export const reviewApi = createApi({
   reducerPath: 'reviewApi',
-  baseQuery: baseQuery('http://localhost:8080/api/reviews'),
+  baseQuery: baseQuery('/reviews'),
   tagTypes: ['Review'],
   endpoints: builder => ({
     getAllReviews: builder.query<IReview[], void>({

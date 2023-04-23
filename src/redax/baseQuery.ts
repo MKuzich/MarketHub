@@ -3,9 +3,11 @@ import { RootState } from './store';
 import { setAccessToken } from './authSlice';
 import { store } from './store';
 
-export const baseQuery = (baseUrl: string) =>
+const COMMON_URL = 'http://localhost:8080/api';
+
+export const baseQuery = (route: string) =>
   fetchBaseQuery({
-    baseUrl,
+    baseUrl: COMMON_URL + route,
     prepareHeaders: (headers, { getState }) => {
       const accessToken = (getState() as RootState).auth.accessToken;
       if (accessToken) {

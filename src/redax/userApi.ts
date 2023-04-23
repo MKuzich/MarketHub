@@ -4,7 +4,7 @@ import { baseQuery } from './baseQuery';
 
 export const userApi = createApi({
   reducerPath: 'userApi',
-  baseQuery: baseQuery('http://localhost:8080/api/user'),
+  baseQuery: baseQuery('/user'),
   tagTypes: ['User'],
   endpoints: builder => ({
     getCurrent: builder.query<IUser, void>({
