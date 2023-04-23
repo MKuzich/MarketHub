@@ -1,35 +1,32 @@
 {
   "files": {
     "main.css": "/markethub/static/css/main.b0e5060d.css",
-    "main.js": "/markethub/static/js/main.d515c568.js",
-    "static/js/799.2fed86d1.chunk.js": "/markethub/static/js/799.2fed86d1.chunk.js",
-    "static/js/454.e66b1b27.chunk.js": "/markethub/static/js/454.e66b1b27.chunk.js",
+    "main.js": "/markethub/static/js/main.ecbd284c.js",
+    "static/js/975.02c93e9f.chunk.js": "/markethub/static/js/975.02c93e9f.chunk.js",
+    "static/js/125.200eec28.chunk.js": "/markethub/static/js/125.200eec28.chunk.js",
     "static/js/815.07f45c61.chunk.js": "/markethub/static/js/815.07f45c61.chunk.js",
     "static/js/848.dbc680f9.chunk.js": "/markethub/static/js/848.dbc680f9.chunk.js",
     "static/js/475.3934e2eb.chunk.js": "/markethub/static/js/475.3934e2eb.chunk.js",
     "static/js/731.51e3fa00.chunk.js": "/markethub/static/js/731.51e3fa00.chunk.js",
-    "static/js/566.7c6bef2b.chunk.js": "/markethub/static/js/566.7c6bef2b.chunk.js",
-    "static/media/owner.png": "/markethub/static/media/owner.be4ca0773babe7feb387.png",
+    "static/js/973.31a5165c.chunk.js": "/markethub/static/js/973.31a5165c.chunk.js",
     "static/media/temp-1.jpg": "/markethub/static/media/temp-1.ab18edbe27c757ea6e55.jpg",
     "static/media/temp-2.jpg": "/markethub/static/media/temp-2.28a622fbede9a382df2c.jpg",
+    "static/media/question.jpg": "/markethub/static/media/question.b20db70a3649c7ca41d3.jpg",
     "static/media/category.jpg": "/markethub/static/media/category.be12bc8b24437b81a94f.jpg",
-    "static/media/card-4.jpg": "/markethub/static/media/card-4.855e016186b67b7b733a.jpg",
-    "static/media/card-9.jpg": "/markethub/static/media/card-9.d5bed5642caeeb02a6a7.jpg",
-    "static/media/card-2.jpg": "/markethub/static/media/card-2.3a0718990ad3e6092133.jpg",
     "index.html": "/markethub/index.html",
     "static/media/markethub-logo.svg": "/markethub/static/media/markethub-logo.d0f320aad0887a1fdfa46619c71bfa22.svg",
     "main.b0e5060d.css.map": "/markethub/static/css/main.b0e5060d.css.map",
-    "main.d515c568.js.map": "/markethub/static/js/main.d515c568.js.map",
-    "799.2fed86d1.chunk.js.map": "/markethub/static/js/799.2fed86d1.chunk.js.map",
-    "454.e66b1b27.chunk.js.map": "/markethub/static/js/454.e66b1b27.chunk.js.map",
+    "main.ecbd284c.js.map": "/markethub/static/js/main.ecbd284c.js.map",
+    "975.02c93e9f.chunk.js.map": "/markethub/static/js/975.02c93e9f.chunk.js.map",
+    "125.200eec28.chunk.js.map": "/markethub/static/js/125.200eec28.chunk.js.map",
     "815.07f45c61.chunk.js.map": "/markethub/static/js/815.07f45c61.chunk.js.map",
     "848.dbc680f9.chunk.js.map": "/markethub/static/js/848.dbc680f9.chunk.js.map",
     "475.3934e2eb.chunk.js.map": "/markethub/static/js/475.3934e2eb.chunk.js.map",
     "731.51e3fa00.chunk.js.map": "/markethub/static/js/731.51e3fa00.chunk.js.map",
-    "566.7c6bef2b.chunk.js.map": "/markethub/static/js/566.7c6bef2b.chunk.js.map"
+    "973.31a5165c.chunk.js.map": "/markethub/static/js/973.31a5165c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0e5060d.css",
-    "static/js/main.d515c568.js"
+    "static/js/main.ecbd284c.js"
   ]
 }
