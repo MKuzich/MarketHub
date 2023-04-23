@@ -15,17 +15,17 @@ const Home: React.FC = () => {
       <Hero />
       <TopProducts
         title="Top products"
-        products={isSuccess ? data : []}
+        products={isSuccess ? data.products : []}
         cardsPerView={3}
       />
       <TopProducts
         title="New arrivals"
-        products={isSuccess ? data : []}
+        products={isSuccess ? data.products : []}
         cardsPerView={7}
       />
       <TopProducts
         title="Trending products"
-        products={isSuccess ? data : []}
+        products={isSuccess ? data.products : []}
         cardsPerView={5}
       />
       <Categories />

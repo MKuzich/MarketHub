@@ -11,7 +11,10 @@ export const productApi = createApi({
   baseQuery: baseQuery('/products'),
   tagTypes: ['Product'],
   endpoints: builder => ({
-    getAllProducts: builder.query<IProduct[], void>({
+    getAllProducts: builder.query<
+      { products: IProduct[]; total: number },
+      void
+    >({
       query: () => '/',
       providesTags: ['Product'],
     }),

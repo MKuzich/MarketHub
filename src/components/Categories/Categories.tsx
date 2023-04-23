@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { Container, Stack, Box, Typography } from '@mui/material';
 
 import { SectionTitle } from '../SectionTitle/SectionTitle';
+import questionImg from '../../images/question.jpg';
 
 import { useGetAllCategoriesQuery } from '../../redax/categoryApi';
 
 export const Categories: React.FC = () => {
   const { data, isSuccess } = useGetAllCategoriesQuery();
+
   return (
     <section>
       <Container>
@@ -32,7 +34,13 @@ export const Categories: React.FC = () => {
                     justifyContent: 'center',
                   }}
                 >
-                  <img src={image} alt={name} />
+                  <img
+                    src={image}
+                    onError={e =>
+                      ((e.target as HTMLImageElement).src = questionImg)
+                    }
+                    alt={name}
+                  />
                 </Box>
                 <Typography variant="h3">{name}</Typography>
                 <Typography>{desription}</Typography>

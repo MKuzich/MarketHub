@@ -23,6 +23,6 @@ export const baseQuery = (route: string) =>
         await dispatch(setAccessToken(accessToken));
       }
 
-      return response;
+      return response.json();
     },
   });

@@ -27,7 +27,7 @@ export const CustomersReviews: React.FC = () => {
           className="mySwiper"
         >
           {isSuccess &&
-            data.map(review => (
+            data.reviews.map(review => (
               <SwiperSlide key={review._id}>
                 <ReviewCard review={review} />
               </SwiperSlide>

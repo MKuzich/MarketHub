@@ -7,7 +7,7 @@ export const reviewApi = createApi({
   baseQuery: baseQuery('/reviews'),
   tagTypes: ['Review'],
   endpoints: builder => ({
-    getAllReviews: builder.query<IReview[], void>({
+    getAllReviews: builder.query<{ reviews: IReview[]; total: number }, void>({
       query: () => '/',
       providesTags: ['Review'],
     }),

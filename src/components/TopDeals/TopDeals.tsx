@@ -15,11 +15,11 @@ export const TopDeals = () => {
         {isSuccess && (
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <TopDeal product={data[0]} />
+              <TopDeal product={data.products[0]} />
             </Grid>
             <Grid item xs={6}>
               <Grid container spacing={2}>
-                {data.slice(1, 5).map(product => (
+                {data.products.slice(1, 5).map(product => (
                   <Grid key={product._id} item xs={6}>
                     <TopDeal product={product} />
                   </Grid>

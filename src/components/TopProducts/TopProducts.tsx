@@ -30,11 +30,12 @@ export const TopProducts: React.FC<IProps> = ({
           modules={[Navigation]}
           className="mySwiper"
         >
-          {products.map(product => (
-            <SwiperSlide key={product._id}>
-              <TopCard product={product} />
-            </SwiperSlide>
-          ))}
+          {products &&
+            products.map(product => (
+              <SwiperSlide key={product._id}>
+                <TopCard product={product} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Container>
     </section>
