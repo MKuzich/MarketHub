@@ -25,7 +25,7 @@ export const TopCard: React.FC<IProps> = ({
         }}
       >
         <img
-          src={images && images[0]}
+          src={images && images.length > 0 ? images[0] : questionImg}
           onError={e => ((e.target as HTMLImageElement).src = questionImg)}
           alt={name}
         />
