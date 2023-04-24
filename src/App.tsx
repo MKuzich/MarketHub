@@ -1,11 +1,13 @@
 import React, { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from './components/GlobalStyle';
 
-const SharedLayout = lazy(() => import('./SharedLayout/SharedLayout'));
-const Home = lazy(() => import('../pages/Home/Home'));
-const Category = lazy(() => import('../pages/Category/Category'));
-const Product = lazy(() => import('../pages/Product/Product'));
+const SharedLayout = lazy(
+  () => import('./components/SharedLayout/SharedLayout')
+);
+const Home = lazy(() => import('./pages/Home/Home'));
+const Category = lazy(() => import('./pages/Category/Category'));
+const Product = lazy(() => import('./pages/Product/Product'));
 
 export const App: React.FC = () => {
   return (

@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import {
   Stack,
@@ -19,10 +19,12 @@ import { VscAccount } from 'react-icons/vsc';
 import { Logo } from '../Logo/Logo';
 import { categories } from '../../data/categories';
 import { StyledLink } from './SharedLayout.styled';
+import { LoginModal } from '../LoginModal/LoginModal';
 
 import { links, socials, payment, legal } from '../../data/footerdata';
 
 const SharedLayout: React.FC = () => {
+  const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
   return (
     <>
       <header>
@@ -59,7 +61,11 @@ const SharedLayout: React.FC = () => {
             <Button variant="outlined" startIcon={<TbShoppingCart />}>
               0
             </Button>
-            <IconButton color="secondary" aria-label="profile">
+            <IconButton
+              color="secondary"
+              aria-label="profile"
+              onClick={() => setIsOpenLoginModal(true)}
+            >
               <VscAccount />
             </IconButton>
           </Stack>
@@ -72,7 +78,6 @@ const SharedLayout: React.FC = () => {
       </main>
       <footer>
         <Container>
-          {' '}
           <Stack>
             <Stack direction="row">
               <Stack>
@@ -139,6 +144,7 @@ const SharedLayout: React.FC = () => {
           </Stack>
         </Container>
       </footer>
+      <LoginModal open={isOpenLoginModal} setOpen={setIsOpenLoginModal} />
     </>
   );
 };
