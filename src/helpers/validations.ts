@@ -20,3 +20,36 @@ export const userLogInSchema = yup.object().shape({
     ),
   password: yup.string().required('Password is required'),
 });
+
+export const userCreateSchema = yup.object().shape({
+  phone: yup
+    .string()
+    .matches(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number')
+    .required('Phone is required'),
+  email: yup
+    .string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .required('Password is required')
+    .min(8, 'Password must be at least 8 characters long'),
+  firstName: yup.string().required('First name is required'),
+  secondName: yup.string().required('Second name is required'),
+  image: yup
+    .mixed()
+    .test(
+      'fileType',
+      'Invalid file type',
+      value =>
+        value &&
+        ['image/png', 'image/jpeg', 'image/gif'].includes((value as File).type)
+    )
+    .test('fileSize', 'File size too large', value => {
+      if (!value || !('size' in value)) {
+        return true;
+      }
+      return (value as File).size <= 5000000;
+    })
+    .nullable(),
+});

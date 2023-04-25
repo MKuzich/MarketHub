@@ -15,7 +15,7 @@ export const authApi = createApi({
   baseQuery: baseQuery('/auth'),
   tagTypes: ['Auth'],
   endpoints: builder => ({
-    signUp: builder.mutation<boolean, IUserCreate>({
+    signUp: builder.mutation<boolean, FormData>({
       query: value => ({
         url: '/signup',
         method: 'POST',

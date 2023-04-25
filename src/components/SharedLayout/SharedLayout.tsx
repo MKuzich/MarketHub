@@ -20,11 +20,13 @@ import { Logo } from '../Logo/Logo';
 import { categories } from '../../data/categories';
 import { StyledLink } from './SharedLayout.styled';
 import { LoginModal } from '../LoginModal/LoginModal';
+import { RegisterModal } from '../RegisterModal/RegisterModal';
 
 import { links, socials, payment, legal } from '../../data/footerdata';
 
 const SharedLayout: React.FC = () => {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+  const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
   return (
     <>
       <header>
@@ -145,6 +147,10 @@ const SharedLayout: React.FC = () => {
         </Container>
       </footer>
       <LoginModal open={isOpenLoginModal} setOpen={setIsOpenLoginModal} />
+      <RegisterModal
+        open={isOpenRegisterModal}
+        setOpen={setIsOpenRegisterModal}
+      />
     </>
   );
 };

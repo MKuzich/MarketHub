@@ -29,6 +29,15 @@ export interface IUserCreate {
   image?: string | null;
 }
 
+export interface IUserSignUp {
+  phone: string;
+  email: string;
+  password: string;
+  firstName: string;
+  secondName: string;
+  image?: File | null;
+}
+
 export interface IUserLogIn {
   phone?: string;
   email?: string;
