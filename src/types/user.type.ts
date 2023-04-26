@@ -35,7 +35,7 @@ export interface IUserSignUp {
   password: string;
   firstName: string;
   secondName: string;
-  image?: File | null;
+  image?: File | '';
 }
 
 export interface IUserLogIn {

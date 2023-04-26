@@ -35,11 +35,23 @@ const initialValues: IUserLogIn = { email: '', phone: '', password: '' };
 interface IProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenRegister: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const LoginModal: React.FC<IProps> = ({ open, setOpen }) => {
+export const LoginModal: React.FC<IProps> = ({
+  open,
+  setOpen,
+  setOpenRegister,
+}) => {
   const [isPhone, setIsPhone] = useState(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleClickOnRegisterLink = () => {
+    setOpen(false);
+    setOpenRegister(true);
+  };
 
   const [logIn] = useLogInMutation();
 
@@ -109,11 +121,12 @@ export const LoginModal: React.FC<IProps> = ({ open, setOpen }) => {
               error={formik.touched.password && Boolean(formik.errors.password)}
               helperText={formik.touched.password && formik.errors.password}
             />
-            <Stack direction="row" justifyContent="space-between">
-              <Button variant="contained" type="submit">
-                Submit
-              </Button>
-            </Stack>
+            <Button variant="contained" type="submit">
+              Submit
+            </Button>
+            <Button type="button" onClick={handleClickOnRegisterLink}>
+              Go to register
+            </Button>
           </Stack>
         </form>
       </Box>

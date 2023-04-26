@@ -33,15 +33,20 @@ const initialValues: IUserSignUp = {
   password: '',
   firstName: '',
   secondName: '',
-  image: null,
+  image: '',
 };
 
 interface IProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const RegisterModal: React.FC<IProps> = ({ open, setOpen }) => {
+export const RegisterModal: React.FC<IProps> = ({
+  open,
+  setOpen,
+  setOpenLogin,
+}) => {
   const handleClose = () => setOpen(false);
 
   const [signUp] = useSignUpMutation();
@@ -62,6 +67,11 @@ export const RegisterModal: React.FC<IProps> = ({ open, setOpen }) => {
       signUp(formData);
     },
   });
+
+  const handleClickOnRegisterLink = () => {
+    setOpen(false);
+    setOpenLogin(true);
+  };
 
   return createPortal(
     <Modal open={open} onClose={handleClose}>
@@ -139,11 +149,12 @@ export const RegisterModal: React.FC<IProps> = ({ open, setOpen }) => {
               error={formik.touched.image && Boolean(formik.errors.image)}
               helperText={formik.touched.image && formik.errors.image}
             />
-            <Stack direction="row" justifyContent="space-between">
-              <Button variant="contained" type="submit">
-                Submit
-              </Button>
-            </Stack>
+            <Button variant="contained" type="submit">
+              Submit
+            </Button>
+            <Button type="button" onClick={handleClickOnRegisterLink}>
+              Go to login
+            </Button>
           </Stack>
         </form>
       </Box>

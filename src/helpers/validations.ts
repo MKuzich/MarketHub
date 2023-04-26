@@ -38,17 +38,25 @@ export const userCreateSchema = yup.object().shape({
   secondName: yup.string().required('Second name is required'),
   image: yup
     .mixed()
-    .test(
-      'fileType',
-      'Invalid file type',
-      value =>
-        value &&
-        ['image/png', 'image/jpeg', 'image/gif'].includes((value as File).type)
-    )
-    .test('fileSize', 'File size too large', value => {
-      if (!value || !('size' in value)) {
+    .test('fileType', 'Invalid file type', value => {
+      if (value === '' || !value) {
         return true;
       }
+      const imagePath = value as string;
+
+      if (typeof imagePath === 'string') {
+        const fileName = imagePath.replace(/^.*[\\\/]/, '');
+        const fileType = fileName?.split('.').pop()?.toLowerCase();
+        return ['png', 'jpeg', 'jpg', 'gif'].includes(fileType ?? '');
+      }
+
+      return true;
+    })
+    .test('fileSize', 'File size too large', value => {
+      if (!value) {
+        return true;
+      }
+      console.log(value);
       return (value as File).size <= 5000000;
     })
     .nullable(),

@@ -146,10 +146,15 @@ const SharedLayout: React.FC = () => {
           </Stack>
         </Container>
       </footer>
-      <LoginModal open={isOpenLoginModal} setOpen={setIsOpenLoginModal} />
+      <LoginModal
+        open={isOpenLoginModal}
+        setOpen={setIsOpenLoginModal}
+        setOpenRegister={setIsOpenRegisterModal}
+      />
       <RegisterModal
         open={isOpenRegisterModal}
         setOpen={setIsOpenRegisterModal}
+        setOpenLogin={setIsOpenLoginModal}
       />
     </>
   );
