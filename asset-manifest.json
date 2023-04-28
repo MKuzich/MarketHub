@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/markethub/static/css/main.b0e5060d.css",
-    "main.js": "/markethub/static/js/main.cc5e9b84.js",
-    "static/js/399.3ba1da9d.chunk.js": "/markethub/static/js/399.3ba1da9d.chunk.js",
+    "main.js": "/markethub/static/js/main.f3ff75ed.js",
+    "static/js/669.09d219aa.chunk.js": "/markethub/static/js/669.09d219aa.chunk.js",
     "static/js/125.238c91d0.chunk.js": "/markethub/static/js/125.238c91d0.chunk.js",
     "static/js/815.07f45c61.chunk.js": "/markethub/static/js/815.07f45c61.chunk.js",
     "static/js/848.dbc680f9.chunk.js": "/markethub/static/js/848.dbc680f9.chunk.js",
     "static/js/625.37bbb4a2.chunk.js": "/markethub/static/js/625.37bbb4a2.chunk.js",
-    "static/js/309.33f085a0.chunk.js": "/markethub/static/js/309.33f085a0.chunk.js",
+    "static/js/142.4833ca5e.chunk.js": "/markethub/static/js/142.4833ca5e.chunk.js",
     "static/js/238.a783dd01.chunk.js": "/markethub/static/js/238.a783dd01.chunk.js",
     "static/media/temp-1.jpg": "/markethub/static/media/temp-1.ab18edbe27c757ea6e55.jpg",
     "static/media/temp-2.jpg": "/markethub/static/media/temp-2.28a622fbede9a382df2c.jpg",
@@ -16,17 +16,17 @@
     "index.html": "/markethub/index.html",
     "static/media/markethub-logo.svg": "/markethub/static/media/markethub-logo.d0f320aad0887a1fdfa46619c71bfa22.svg",
     "main.b0e5060d.css.map": "/markethub/static/css/main.b0e5060d.css.map",
-    "main.cc5e9b84.js.map": "/markethub/static/js/main.cc5e9b84.js.map",
-    "399.3ba1da9d.chunk.js.map": "/markethub/static/js/399.3ba1da9d.chunk.js.map",
+    "main.f3ff75ed.js.map": "/markethub/static/js/main.f3ff75ed.js.map",
+    "669.09d219aa.chunk.js.map": "/markethub/static/js/669.09d219aa.chunk.js.map",
     "125.238c91d0.chunk.js.map": "/markethub/static/js/125.238c91d0.chunk.js.map",
     "815.07f45c61.chunk.js.map": "/markethub/static/js/815.07f45c61.chunk.js.map",
     "848.dbc680f9.chunk.js.map": "/markethub/static/js/848.dbc680f9.chunk.js.map",
     "625.37bbb4a2.chunk.js.map": "/markethub/static/js/625.37bbb4a2.chunk.js.map",
-    "309.33f085a0.chunk.js.map": "/markethub/static/js/309.33f085a0.chunk.js.map",
+    "142.4833ca5e.chunk.js.map": "/markethub/static/js/142.4833ca5e.chunk.js.map",
     "238.a783dd01.chunk.js.map": "/markethub/static/js/238.a783dd01.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0e5060d.css",
-    "static/js/main.cc5e9b84.js"
+    "static/js/main.f3ff75ed.js"
   ]
 }
