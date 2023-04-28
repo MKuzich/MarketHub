@@ -36,28 +36,28 @@ export const userCreateSchema = yup.object().shape({
     .min(8, 'Password must be at least 8 characters long'),
   firstName: yup.string().required('First name is required'),
   secondName: yup.string().required('Second name is required'),
-  image: yup
-    .mixed()
-    .test('fileType', 'Invalid file type', value => {
-      if (value === '' || !value) {
-        return true;
-      }
-      const imagePath = value as string;
+  // image: yup
+  //   .mixed()
+  //   .test('fileType', 'Invalid file type', value => {
+  //     if (value === '' || !value) {
+  //       return true;
+  //     }
+  //     const imagePath = value as string;
 
-      if (typeof imagePath === 'string') {
-        const fileName = imagePath.replace(/^.*[\\\/]/, '');
-        const fileType = fileName?.split('.').pop()?.toLowerCase();
-        return ['png', 'jpeg', 'jpg', 'gif'].includes(fileType ?? '');
-      }
+  //     if (typeof imagePath === 'string') {
+  //       const fileName = imagePath.replace(/^.*[\\\/]/, '');
+  //       const fileType = fileName?.split('.').pop()?.toLowerCase();
+  //       return ['png', 'jpeg', 'jpg', 'gif'].includes(fileType ?? '');
+  //     }
 
-      return true;
-    })
-    .test('fileSize', 'File size too large', value => {
-      if (!value) {
-        return true;
-      }
-      console.log(value);
-      return (value as File).size <= 5000000;
-    })
-    .nullable(),
+  //     return true;
+  //   })
+  //   .test('fileSize', 'File size too large', value => {
+  //     if (!value) {
+  //       return true;
+  //     }
+  //     console.log(value);
+  //     return (value as File).size <= 5000000;
+  //   })
+  //   .nullable(),
 });

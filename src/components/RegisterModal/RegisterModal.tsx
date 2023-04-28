@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
   Modal,
@@ -9,6 +9,7 @@ import {
   Button,
 } from '@mui/material';
 import { useFormik } from 'formik';
+import { useDropzone } from 'react-dropzone';
 
 import { useSignUpMutation } from '../../redax/authApi';
 import { IUserSignUp } from '../../types/user.type';
@@ -33,7 +34,6 @@ const initialValues: IUserSignUp = {
   password: '',
   firstName: '',
   secondName: '',
-  image: '',
 };
 
 interface IProps {
@@ -47,6 +47,18 @@ export const RegisterModal: React.FC<IProps> = ({
   setOpen,
   setOpenLogin,
 }) => {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleDrop = (acceptedFiles: File[]) => {
+    if (acceptedFiles.length === 1) {
+      setSelectedFile(acceptedFiles[0]);
+    }
+  };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: handleDrop,
+  });
+
   const handleClose = () => setOpen(false);
 
   const [signUp] = useSignUpMutation();
@@ -56,13 +68,16 @@ export const RegisterModal: React.FC<IProps> = ({
     validationSchema: userCreateSchema,
     onSubmit: (values: IUserSignUp) => {
       const formData = new FormData();
-      formData.append('phone', values.phone);
-      formData.append('email', values.email);
-      formData.append('password', values.password);
-      formData.append('firstName', values.firstName);
-      formData.append('secondName', values.secondName);
-      if (values.image) {
-        formData.append('image', values.image, values.image?.name);
+      for (const [key, value] of Object.entries(values)) {
+        formData.append(key, value);
+      }
+      // formData.append('phone', values.phone);
+      // formData.append('email', values.email);
+      // formData.append('password', values.password);
+      // formData.append('firstName', values.firstName);
+      // formData.append('secondName', values.secondName);
+      if (selectedFile) {
+        formData.append('image', selectedFile);
       }
       signUp(formData);
     },
@@ -139,16 +154,36 @@ export const RegisterModal: React.FC<IProps> = ({
               }
               helperText={formik.touched.secondName && formik.errors.secondName}
             />
-            <TextField
-              sx={{ width: '100%' }}
-              variant="outlined"
-              type="file"
-              name="image"
-              value={formik.values.image}
-              onChange={formik.handleChange}
-              error={formik.touched.image && Boolean(formik.errors.image)}
-              helperText={formik.touched.image && formik.errors.image}
-            />
+            <Box
+              {...getRootProps()}
+              sx={{
+                p: 3,
+                textAlign: 'center',
+                cursor: 'pointer',
+                backgroundColor: isDragActive ? 'lightgrey' : 'white',
+                border: '1px dashed grey',
+                maxHeight: '100px',
+              }}
+            >
+              <input {...getInputProps()} accept="image/*" />
+              <Typography variant="body1">
+                {selectedFile ? (
+                  <img
+                    src={URL.createObjectURL(selectedFile)}
+                    alt="Uploaded"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '100px',
+                      marginBottom: '1rem',
+                    }}
+                  />
+                ) : isDragActive ? (
+                  'Drop the file here'
+                ) : (
+                  'Drag and drop a file or click to select'
+                )}
+              </Typography>
+            </Box>
             <Button variant="contained" type="submit">
               Submit
             </Button>
