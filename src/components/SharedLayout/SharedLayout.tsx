@@ -11,65 +11,96 @@ import {
   Container,
   Typography,
   TextField,
+  Menu,
+  MenuItem,
 } from '@mui/material';
 import { GoSearch } from 'react-icons/go';
 import { TbShoppingCart } from 'react-icons/tb';
 import { VscAccount } from 'react-icons/vsc';
 
 import { Logo } from '../Logo/Logo';
-import { categories } from '../../data/categories';
-import { StyledLink } from './SharedLayout.styled';
+import { useGetAllCategoriesQuery } from '../../redax/categoryApi';
+
 import { LoginModal } from '../LoginModal/LoginModal';
 import { RegisterModal } from '../RegisterModal/RegisterModal';
 
 import { links, socials, payment, legal } from '../../data/footerdata';
 
 const SharedLayout: React.FC = () => {
+  const { data: categories, isSuccess } = useGetAllCategoriesQuery();
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
   const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <>
       <header>
         <Container>
-          <Stack direction="row" alignItems="center" gap={3}>
-            <Logo />
-            <nav>
-              <Stack direction="row" alignItems="center">
-                {categories.map(({ name, path }) => (
-                  <StyledLink key={name + 'navcat'} to={path}>
-                    {name}
-                  </StyledLink>
-                ))}
-              </Stack>
-            </nav>
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-search">
-                Search
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-search"
-                type="text"
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton aria-label="search" edge="end">
-                      <GoSearch />
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="Search"
-              />
-            </FormControl>
-            <Button type="button">Sell on MarketHub</Button>
-            <Button variant="outlined" startIcon={<TbShoppingCart />}>
-              0
-            </Button>
-            <IconButton
-              color="secondary"
-              aria-label="profile"
-              onClick={() => setIsOpenLoginModal(true)}
+          <Stack direction="column">
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+              gap={3}
             >
-              <VscAccount />
-            </IconButton>
+              <Logo />
+              <div>
+                <Button
+                  id="demo-positioned-button"
+                  aria-controls={open ? 'demo-positioned-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  Categories
+                </Button>
+                <nav>
+                  <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                    {isSuccess &&
+                      categories.map(({ name, tag }) => (
+                        <MenuItem key={name + 'navcat'} onClick={handleClose}>
+                          <Link to={tag}>{name}</Link>
+                        </MenuItem>
+                      ))}
+                  </Menu>
+                </nav>
+              </div>
+              <FormControl sx={{ m: 1, width: '550px' }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-search">
+                  Search
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-search"
+                  size="small"
+                  type="text"
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton aria-label="search" edge="end">
+                        <GoSearch size={16} />
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Search"
+                />
+              </FormControl>
+              <Button type="button">Sell on MarketHub</Button>
+              <Button variant="outlined" startIcon={<TbShoppingCart />}>
+                0
+              </Button>
+              <IconButton
+                color="secondary"
+                aria-label="profile"
+                onClick={() => setIsOpenLoginModal(true)}
+              >
+                <VscAccount />
+              </IconButton>
+            </Stack>
           </Stack>
         </Container>
       </header>

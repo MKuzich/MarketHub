@@ -28,6 +28,47 @@ declare module '@mui/material/Typography' {
 }
 
 export const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2b2d42',
+    },
+    secondary: {
+      main: '#ef233c',
+    },
+    common: {
+      black: '#212121',
+      white: '#ffffff',
+    },
+    text: {
+      primary: '#2b2d42',
+      secondary: '#8d99ae',
+    },
+    background: {
+      default: '#edf2f4',
+      paper: '#ffffff',
+    },
+  },
+  // palette: {
+  //   primary: {
+  //     main: '#EF233C',
+  //   },
+  //   secondary: {
+  //     main: '#D90429',
+  //   },
+  //   background: {
+  //     default: '#EDF2F4',
+  //   },
+  //   text: {
+  //     primary: '#2B2D42',
+  //   },
+  //   neutral: {
+  //     main: '#8D99AE',
+  //   },
+  //   grey: {
+  //     100: '#F2F2F2',
+  //     200: '#EAEAEA',
+  //   },
+  // },
   breakpoints: {
     values: {
       xs: 0,
@@ -40,41 +81,41 @@ export const theme = createTheme({
   typography: {
     body1: {
       fontFamily: 'Roboto',
-      color: '#0b090a',
+      // color: '#0b090a',
     },
     h2: {
       fontFamily: 'Roboto',
-      color: '#0b090a',
+      // color: '#0b090a',
       fontSize: '32px',
       fontWeight: 700,
     },
     h3: {
       fontFamily: 'Roboto',
-      color: '#0b090a',
+      // color: '#0b090a',
       fontSize: '24px',
       fontWeight: 500,
     },
     logo: {
       fontFamily: 'Roboto',
       fontSize: '24px',
-      color: '#0b090a',
+      // color: '#0b090a',
       fontWeight: 700,
       lineHeight: 1,
     },
     mainPrice: {
       fontFamily: 'Roboto',
-      color: '#0b090a',
+      // color: '#0b090a',
       fontSize: '24px',
     },
     oldPrice: {
       fontFamily: 'Roboto',
-      color: '#8c8685',
+      // color: '#8c8685',
       textDecoration: 'line-through',
       fontWeight: 300,
     },
     categoryLabel: {
       fontFamily: 'Roboto',
-      color: '#8c8685',
+      // color: '#8c8685',
     },
   },
 });
