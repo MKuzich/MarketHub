@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/markethub/static/css/main.b0e5060d.css",
-    "main.js": "/markethub/static/js/main.53d6c73c.js",
+    "main.js": "/markethub/static/js/main.1072b453.js",
     "static/js/851.b2febf4a.chunk.js": "/markethub/static/js/851.b2febf4a.chunk.js",
     "static/js/125.238c91d0.chunk.js": "/markethub/static/js/125.238c91d0.chunk.js",
-    "static/js/815.07f45c61.chunk.js": "/markethub/static/js/815.07f45c61.chunk.js",
+    "static/js/815.fd40fdcb.chunk.js": "/markethub/static/js/815.fd40fdcb.chunk.js",
     "static/js/848.dbc680f9.chunk.js": "/markethub/static/js/848.dbc680f9.chunk.js",
     "static/js/625.37bbb4a2.chunk.js": "/markethub/static/js/625.37bbb4a2.chunk.js",
     "static/js/770.4fdf1afb.chunk.js": "/markethub/static/js/770.4fdf1afb.chunk.js",
@@ -15,10 +15,10 @@
     "index.html": "/markethub/index.html",
     "static/media/markethub-logo.svg": "/markethub/static/media/markethub-logo.d0f320aad0887a1fdfa46619c71bfa22.svg",
     "main.b0e5060d.css.map": "/markethub/static/css/main.b0e5060d.css.map",
-    "main.53d6c73c.js.map": "/markethub/static/js/main.53d6c73c.js.map",
+    "main.1072b453.js.map": "/markethub/static/js/main.1072b453.js.map",
     "851.b2febf4a.chunk.js.map": "/markethub/static/js/851.b2febf4a.chunk.js.map",
     "125.238c91d0.chunk.js.map": "/markethub/static/js/125.238c91d0.chunk.js.map",
-    "815.07f45c61.chunk.js.map": "/markethub/static/js/815.07f45c61.chunk.js.map",
+    "815.fd40fdcb.chunk.js.map": "/markethub/static/js/815.fd40fdcb.chunk.js.map",
     "848.dbc680f9.chunk.js.map": "/markethub/static/js/848.dbc680f9.chunk.js.map",
     "625.37bbb4a2.chunk.js.map": "/markethub/static/js/625.37bbb4a2.chunk.js.map",
     "770.4fdf1afb.chunk.js.map": "/markethub/static/js/770.4fdf1afb.chunk.js.map",
@@ -26,6 +26,6 @@
   },
   "entrypoints": [
     "static/css/main.b0e5060d.css",
-    "static/js/main.53d6c73c.js"
+    "static/js/main.1072b453.js"
   ]
 }

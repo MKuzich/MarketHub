@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmarkethub=self.webpackChunkmarkethub||[]).push([[815],{815:function(e,r,n){n.r(r);n(2791);var t=n(7689),u=n(988),a=n(184);r.default=function(){var e=(0,t.UO)().categoryName,r=(0,u.oP)(e),n=r.data,c=r.isSuccess;return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)("div",{children:e}),c&&n.products.map((function(e){return(0,a.jsx)("div",{children:e})}))]})}}}]);
+//# sourceMappingURL=815.fd40fdcb.chunk.js.map
