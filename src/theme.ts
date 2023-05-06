@@ -61,41 +61,41 @@ export const theme = createTheme({
   typography: {
     body1: {
       fontFamily: 'Roboto',
-      // color: '#0b090a',
+      color: '#2b2d42',
     },
     h2: {
       fontFamily: 'Roboto',
-      // color: '#0b090a',
+      color: '#2b2d42',
       fontSize: '32px',
       fontWeight: 700,
     },
     h3: {
       fontFamily: 'Roboto',
-      // color: '#0b090a',
+      color: '#2b2d42',
       fontSize: '24px',
       fontWeight: 500,
     },
     logo: {
       fontFamily: 'Roboto',
       fontSize: '24px',
-      // color: '#0b090a',
+      color: '#2b2d42',
       fontWeight: 700,
       lineHeight: 1,
     },
     mainPrice: {
       fontFamily: 'Roboto',
-      // color: '#0b090a',
+      color: '#2b2d42',
       fontSize: '24px',
     },
     oldPrice: {
       fontFamily: 'Roboto',
-      // color: '#8c8685',
+      color: '#8c8685',
       textDecoration: 'line-through',
       fontWeight: 300,
     },
     categoryLabel: {
       fontFamily: 'Roboto',
-      // color: '#8c8685',
+      color: '#8c8685',
     },
   },
 });
