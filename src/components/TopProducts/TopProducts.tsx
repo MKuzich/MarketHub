@@ -6,6 +6,7 @@ import { Navigation } from 'swiper';
 import { TopCard } from '../TopCard/TopCard';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import { IProduct } from '../../types/product.type';
+import { Section } from './TopProducts.styled';
 
 type IProps = {
   title: string;
@@ -19,7 +20,7 @@ export const TopProducts: React.FC<IProps> = ({
   cardsPerView = 5,
 }) => {
   return (
-    <section>
+    <Section>
       <Container>
         <SectionTitle title={title} />
         <Swiper
@@ -37,6 +38,6 @@ export const TopProducts: React.FC<IProps> = ({
           ))}
         </Swiper>
       </Container>
-    </section>
+    </Section>
   );
 };

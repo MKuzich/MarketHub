@@ -7,7 +7,7 @@ type IProps = {
 
 export const SectionTitle: React.FC<IProps> = ({ title }) => {
   return (
-    <Box>
+    <Box sx={{ marginBottom: 4 }}>
       <Typography variant="h2">{title}</Typography>
     </Box>
   );
